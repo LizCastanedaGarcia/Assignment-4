@@ -1,0 +1,131 @@
+<app-create-content></app-create-content> <!--Assignment#5-->
+<app-create-content (contentAdded)="onContentAdded($event)"></app-create-content>  <!--Assignment#5-->
+<div>
+<div>                                     <!--Assignment#5-->
+<div class="input">
+  <input
+    type="text"
+    name="title"
+    [ngModel]="title"
+    #searchT
+    placeholder="Find the Food name"
+  />
+  <button (click)="checkTitle()">Search</button>
+</div>
+
+<p class="message" [style.color]="isFound ? 'green' : 'red'">
+  {{ message }}
+</p>
+
+
+<div class="container">
+  <div class="card-none">
+    <h2>No Type</h2>
+    <app-content-card
+      *ngFor="let item of contentArray | contentTypeFilterPipe : ''"
+      [content]="item"
+    ></app-content-card>
+  </div>
+
+  <div class="card-Spicy">
+    <h2>Spicy</h2>
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'Spicy'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="card-Sweet">
+    <h2>Sweet</h2>
+
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'Sweet'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+
+  <div class="card-Spicy2">
+    <h2>Spicy2</h2>
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'Spicy2'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="card-Salt">
+    <h2>Salt</h2>
+
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'Salt'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  
+  <div class="container">
+    <div class="card-none">
+      <h2>No Type</h2>
+      <app-content-card
+        *ngFor="let item of contentArray | contentTypeFilterPipe : ''"
+        [content]="item"
+      ></app-content-card>
+    </div>
+    <app-content-card
+      *ngFor="let item of contentArray | contentTypeFilterPipe : 'food'"
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="content-list">
+    <div class="completeFood">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Spicy'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="food">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Sweet'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="food">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Salt'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="food">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Salt'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="noTypes">
+      <h3>No Types</h3>
+      <app-content-card
+        *ngFor="let contentItem of contentArray | contentTypeFilterPipe : ''"
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,17 @@
+<!--Assignment#5-->
+<div>
+    <input type="text" placeholder="id" [(ngModel)]="newContent.id">
+    <input type="text" placeholder="title" [(ngModel)]="newContent.title">
+    <input type="text" placeholder="description" [(ngModel)]="newContent.description">
+    <input type="text" placeholder="taste" [(ngModel)]="newContent.taste">
+    <input type="text" placeholder="ingridients" [(ngModel)]="newContent.ingridients">
+    <input type="text" placeholder="Costo" [(ngModel)]="newContent.Costo">
+    <input type="text" placeholder="imageUrl" [(ngModel)]="newContent.imageUrl">
+    <input type="text" placeholder="type" [(ngModel)]="newContent.type">
+    <input type="text" placeholder="tags" [(ngModel)]="newContent.tags">
+    <!-- Assignment#5 -->
+  
+    <button (click)="createContent()">Add Content</button>
+    <div *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</div>
+  </div>
+  
