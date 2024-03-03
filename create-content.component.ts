@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';  //BONUS
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HoverAffectDirective } from '../hover-affect.directive';
+import { ContentService } from '../content.service';
 
 @Component({
   selector: 'app-create-content',
